@@ -7,7 +7,9 @@
  Este proyecto se conforma de una aplicaion de escritorio y una placa arduino con un sensor de humedad y temperatura las cuales seran parte de un sistema de control de condiciones ambientales de un invernadero.
 
  Materiales:
+
     Placa: NodeMCU ESP8266
+    
     Sensor: DHT11
 
  Arquitectura: Cliente Servidor
@@ -16,4 +18,4 @@
 
  Motor de base de datos: Mysql
 
- Metodología: Híbrida
+ 

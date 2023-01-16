@@ -17,5 +17,8 @@ $query = "INSERT INTO registros (tiempo,temperatura, humedad, invernadero) VALUE
 
 $result = mysqli_query($conection, $query);
 
+echo "Temperatura: ".$temp;
+echo "<br> Humedad: ".$hum;
+echo "<br> Invernadero: ".$inv;
 
 ?>
