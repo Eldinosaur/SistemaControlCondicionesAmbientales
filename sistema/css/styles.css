@@ -1,0 +1,54 @@
+.divFormulario {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.formularioLogin {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top: none;
+    border-bottom: none;
+    border-color: rgb(60, 175, 75);
+    background-color: white;
+}
+
+.avatarLogin {
+    height: 40px;
+    width: 40px;
+    border-radius: 10%;
+}
+
+.divAvatarLogin {
+    text-align: center;
+}
+
+.divTituloLogin {
+    font-weight: bold;
+}
+
+.bodyBack {
+    background-color: rgb(27, 102, 51);
+}
+
+.divRegistrarse {
+    padding: 30px;
+}
+
+.avatar {
+    height: 50px;
+}
+
+.bgHome {
+    height: 20%;
+    width: 100%;
+}
+
+.botonForm {
+    padding: 30px;
+}

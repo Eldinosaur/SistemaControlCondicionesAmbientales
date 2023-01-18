@@ -61,7 +61,7 @@ void loop() {
     }
 
     //armamos la url con los parametros del proyecto
-    String url = "/proyecto/servicios/registrosTH.php?temp=";
+    String url = "/proyecto/sistema/servicios/registrosTH.php?temp=";
     url += t;
     url += "&hum=";
     url += h;
