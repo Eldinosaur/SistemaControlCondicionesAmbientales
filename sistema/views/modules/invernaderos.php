@@ -1,6 +1,6 @@
 <?php
 include "servicios/cargarinvernaderos.php";
-header("Refresh:15");
+header("Refresh:5");
 ?>
 <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
 
@@ -9,6 +9,7 @@ header("Refresh:15");
 <tr>
     <th scope="col">N°</th>
     <th scope="col">Cultivo</th>
+    <th scope="col">Fecha de Registro</th>
     <th scope="col">Temperatura Actual</th>
     <th scope="col">Humedad Actual</th>
 </tr>
@@ -25,8 +26,9 @@ header("Refresh:15");
     <tr>
         <td><?php echo $val[$i]['numero']; ?></td>
         <td><?php echo $val[$i]['cultivo']; ?></td>
-        <td><?php echo $val[$i]['temperatura']; ?></td>
-        <td><?php echo $val[$i]['humedad']; ?></td>
+        <td><?php if ($val[$i]['fecha'] == null){echo "0000-00-00 00:00:00";}else{echo $val[$i]['fecha'];}?></td>
+        <td><?php if ($val[$i]['temperatura'] == null){echo "0.0";}else{echo $val[$i]['temperatura'];} ?></td>
+        <td><?php if ($val[$i]['humedad'] == null){echo "0.0";}else{echo $val[$i]['humedad'];} ?></td>
         
         </tr>
     <?php   

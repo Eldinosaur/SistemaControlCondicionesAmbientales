@@ -38,7 +38,7 @@
                         </li>
                     </ul>
                     <div style="color:white">
-                    <p>Usuario:</p>
+                    <p>Bienvenido:</p>
                     <?php
                         echo $_SESSION['nombre']." ".$_SESSION['apellido'];
                         ?>

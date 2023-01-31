@@ -29,12 +29,12 @@ if(isset($_POST['envio'])){
             <div class="mb-3">
                 <img src="img/user.png">
                 <label for="usuario" class="form-label" style="font-weight:bold;">Usuario</label>
-                <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Ingrese su usuario">
+                <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Ingrese su usuario" required>
             </div>
             <div class="mb-3">
                 <img src="img/password.png">
                 <label for="clave" class="form-label" style="font-weight:bold">Contraseña</label>
-                <input type="password" class="form-control" name="clave" id="clave" placeholder="Ingrese su contraseña">
+                <input type="password" class="form-control" name="clave" id="clave" placeholder="Ingrese su contraseña" required>
             </div>
             <div>
                 <button type="submit" class="form-control" id="envio" name="envio" style="background-color:green; color:white">Ingresar</button>

@@ -7,7 +7,7 @@ header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 include_once 'conexion.php';
 $time = time();
 
-$sqlSelect = "SELECT numero, cultivo,(SELECT temperatura FROM registros WHERE tiempo like '$time' and invernadero = numero) temperatura, (SELECT humedad FROM registros WHERE tiempo like '$time' and invernadero = numero) humedad FROM `invernaderos` ";
+$sqlSelect = "SELECT numero, cultivo,(SELECT fecha FROM registros WHERE fecha = (SELECT max(fecha) FROM `registros`) and invernadero = numero) fecha,(SELECT temperatura FROM registros WHERE fecha = (SELECT max(fecha) FROM `registros`) and invernadero = numero) temperatura, (SELECT humedad FROM registros WHERE fecha = (SELECT max(fecha) FROM `registros`) and invernadero = numero) humedad FROM `invernaderos` ";
 $respuesta = $conection -> query ($sqlSelect);
 $result = array ();
 
