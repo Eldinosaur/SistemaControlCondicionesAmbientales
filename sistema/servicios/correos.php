@@ -20,12 +20,12 @@ try{
     $mail->isSMTP();
     $mail ->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'anynaranjo2011@hotmail.com';
-    $mail->Password = 'Octavia@2101';
+    $mail->Username = 'dino@example.com';//direccion de correo electronico emisor
+    $mail->Password = 'Password';//contraseña de correo electronico emisor
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->setFrom('anynaranjo2011@hotmail.com', 'SCCA - Sistema de Control de Condiciones Ambientales');
+    $mail->setFrom('dino@example.com', 'SCCA - Sistema de Control de Condiciones Ambientales');
     $mail->addAddress($correo,"Supervisor");
 
     $mail->isHTML(true);
