@@ -5,9 +5,9 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
 include_once 'conexion.php';
-$time = time();
 
-$sqlSelect = "SELECT numero, cultivo,(SELECT fecha FROM registros WHERE fecha = (SELECT max(fecha) FROM `registros`) and invernadero = numero) fecha,(SELECT temperatura FROM registros WHERE fecha = (SELECT max(fecha) FROM `registros`) and invernadero = numero) temperatura, (SELECT humedad FROM registros WHERE fecha = (SELECT max(fecha) FROM `registros`) and invernadero = numero) humedad FROM `invernaderos` ";
+
+$sqlSelect = "SELECT numero, cultivo,min_temp,max_temp,min_hum,max_hum,(SELECT fecha FROM registros WHERE fecha = (SELECT max(fecha) FROM `registros`) and invernadero = numero) fecha,(SELECT temperatura FROM registros WHERE fecha = (SELECT max(fecha) FROM `registros`) and invernadero = numero) temperaturamedida, (SELECT humedad FROM registros WHERE fecha = (SELECT max(fecha) FROM `registros`) and invernadero = numero) humedadmedida,creador FROM `invernaderos` ";
 $respuesta = $conection -> query ($sqlSelect);
 $result = array ();
 

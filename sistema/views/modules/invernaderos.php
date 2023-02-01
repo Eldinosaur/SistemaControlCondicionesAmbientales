@@ -1,14 +1,26 @@
 <?php
+if (isset($_POST['envio'])) {
+  include "servicios/datoscorreo.php";
+  if($correo != null){
+    include "servicios/correos.php";
+  }
+}
 include "servicios/cargarinvernaderos.php";
 header("Refresh:5");
-?>
-<div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
 
+
+?>
+
+<div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
 <table class="table table-striped">
 <thead>
 <tr>
     <th scope="col">N°</th>
     <th scope="col">Cultivo</th>
+    <th scope="col">Temperatura Mínima</th>
+    <th scope="col">Temperatura Máxima</th>
+    <th scope="col">Humedad Mínima</th>
+    <th scope="col">Humedad Máxima</th>
     <th scope="col">Fecha de Registro</th>
     <th scope="col">Temperatura Actual</th>
     <th scope="col">Humedad Actual</th>
@@ -26,9 +38,18 @@ header("Refresh:5");
     <tr>
         <td><?php echo $val[$i]['numero']; ?></td>
         <td><?php echo $val[$i]['cultivo']; ?></td>
+        <td><?php echo $val[$i]['min_temp']." °C"; ?></td>
+        <td><?php echo $val[$i]['max_temp']." °C"; ?></td>
+        <td><?php echo $val[$i]['min_hum']." %"; ?></td>
+        <td><?php echo $val[$i]['max_hum']." %"; ?></td>
         <td><?php if ($val[$i]['fecha'] == null){echo "0000-00-00 00:00:00";}else{echo $val[$i]['fecha'];}?></td>
-        <td><?php if ($val[$i]['temperatura'] == null){echo "0.0";}else{echo $val[$i]['temperatura'];} ?></td>
-        <td><?php if ($val[$i]['humedad'] == null){echo "0.0";}else{echo $val[$i]['humedad'];} ?></td>
+        <td><?php if ($val[$i]['temperaturamedida'] == null){echo "0.0 °C";}else{echo $val[$i]['temperaturamedida']." °C";} ?></td>
+        <td><?php if ($val[$i]['humedadmedida'] == null){echo "0.0 %";}else{echo $val[$i]['humedadmedida']." %";} ?></td>
+        <td><form  method="POST">
+        <input type="text" class="form-control" name="creador" id="creador" value="<?php echo $val[$i]['creador']; ?>" hidden>
+                <button type="submit" class="form-control" id="envio" name="envio" style="background-color:green; color:white">Notificar</button>
+              </form>
+        </td>
         
         </tr>
     <?php   
@@ -42,24 +63,4 @@ header("Refresh:5");
 </tbody>
 </table>
 
-</div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
 </div>
