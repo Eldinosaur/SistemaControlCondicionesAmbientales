@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
 const char* ssid = "ProyectoDino";    //SSID de la red a conectarse
 const char* password = "12345678";  //password de la red
-const char* host = "192.168.43.51";   //ip del servidor a mandar la info
+const char* host = "192.168.43.62";   //ip del servidor a mandar la info
 const int port = 80;                  //puerto del servidor
 const int watchdog = 5000;            //frecuencia del watchdog - tiempo de espera cuando no responde el server
 unsigned long previousMillis = millis();
