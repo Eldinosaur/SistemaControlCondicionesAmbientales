@@ -18,14 +18,14 @@ $mail = new PHPMailer(true);
 try{
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->isSMTP();
-    $mail ->Host = 'smtp.office365.com';
+    $mail ->Host = 'smtp-mail.outlook.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'dino@example.com';//direccion de correo electronico emisor
-    $mail->Password = 'Password';//contraseña de correo electronico emisor
+    $mail->Username = 'eldinosaur@outlook.com';//direccion de correo electronico emisor
+    $mail->Password = 'Octavia@2101';//contraseña de correo electronico emisor
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->setFrom('dino@example.com', 'SCCA - Sistema de Control de Condiciones Ambientales');
+    $mail->setFrom('eldinosaur@outlook.com', 'SCCA - Sistema de Control de Condiciones Ambientales');
     $mail->addAddress($correo,"Supervisor");
 
     $mail->isHTML(true);
